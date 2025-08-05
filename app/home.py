@@ -5,6 +5,6 @@ from base import BaseStreamlitPage
 class HomePage(BaseStreamlitPage):
     def load_page(self):
         streamlit.title('This Is My Title')
+        streamlit.subheader('WHY WONT YOU WORK???')
 
-if __name__ == '__main__':
-    HomePage().load_page()
+HomePage().load_page()

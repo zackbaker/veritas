@@ -20,7 +20,9 @@ class TestConnections:
     def test_save(self):
         connection = Connections(
             name='testing',
-            meta_data={'user': 'test', 'password': 'test_test'}
+            connection_type='postgres',
+            meta_data={'user': 'test', 'password': 'test_test'},
+            is_active=True
         )
         self.db.save_obj(connection)
         session = self.db.get_session()
