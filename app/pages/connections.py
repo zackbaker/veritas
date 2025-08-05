@@ -22,6 +22,7 @@ class ViewConnections(BaseStreamlitPage):
         self.display_connections(connections)
 
     def get_connections(self, search: str) -> List[Connections]:
+        # TODO: Maybe add this to the DB Class?
         if search:
             return self.db.get_session().query(Connections).where(Connections.name.ilike(f'%{search}%')).all()
         return self.db.get_session().query(Connections).all()
@@ -42,8 +43,10 @@ class ViewConnections(BaseStreamlitPage):
                     else:
                         i = 1
 
-                _, _, col3 = streamlit.columns(3)
-                if col3.button('View Connection', key=str(connection.id)):
+                col1, _, col3 = streamlit.columns(3)
+                if col1.button('Edit Connection', key=f'edit_{connection.id}', type='primary'):
+                    pass
+                if col3.button('View Connection', key=f'view_{connection.id}'):
                     pass
                 
 
