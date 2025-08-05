@@ -11,7 +11,7 @@ from alembic import context
 # Have to use sys.path.append to get this file to recognize models directory
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) 
 from models.base import VeritasMetaDB, ORMBase
-from models.db_connections import Connections
+from models.connections import Connections
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
