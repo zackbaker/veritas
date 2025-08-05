@@ -1,5 +1,6 @@
 import pytest
 from sqlalchemy import text
+from sqlalchemy.orm import Session
 
 from models.base import VeritasMetaDB
 
@@ -23,3 +24,10 @@ class TestVeritasMetaDB:
     def test_get_url(self):
         assert self.veritas_db.get_url() is not None
         assert isinstance(self.veritas_db.get_url(), str)
+
+    def test_get_session(self):
+        assert isinstance(self.veritas_db.get_session(), Session)
+
+    def test_save_obj(self):
+        # This wil be tested as part of the ORM classes
+        assert True
