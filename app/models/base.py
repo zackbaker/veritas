@@ -14,7 +14,7 @@ class VeritasMetaDB:
         self.db_url = f'postgresql+psycopg2://{user}:{password}@{db_url}:5432/{database}'
         self.engine = sqlalchemy.create_engine(self.db_url)
 
-    def get_url(self):
+    def get_url(self) -> str:
         return self.db_url
 
 
